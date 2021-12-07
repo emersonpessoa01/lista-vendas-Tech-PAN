@@ -13,7 +13,7 @@ public class Cliente {
 	@Autowired
 	TesteRepository testeRepository;
 	
-	public void Salvar(Cliente cliente) {
-		testeRepository.save(cliente);
+	public void Salvar(Cliente c) {
+		testeRepository.save(clien);
 	}
 }
