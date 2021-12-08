@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.apache.el.parser.AstListData;
 import org.springframework.stereotype.Service;
 
 import com.emersonpessoa.listavendasTECHPAN.entities.Cliente;
