@@ -13,15 +13,17 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "tb_cliente") // create table tb_cliente
 public class Cliente {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // incremento
 	private int id;
 	private String nome;
 	private String dn;
-	
-	@OneToMany(mappedBy = "cliente")//um cliente pode fazer várias compras
+
+	@OneToMany(mappedBy = "cliente") // um cliente pode fazer várias compras
 	// criar relacionamento de cliente com compras
 	private List<Compras> lista = new ArrayList<>();
+
 	// criando construtor
 	public Cliente(int id, String nome, String dn) {
 		this.id = id;

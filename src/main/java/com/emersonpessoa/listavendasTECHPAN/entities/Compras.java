@@ -22,35 +22,40 @@ public class Compras {
 	private int id;
 	private Double totalCompra;
 	private LocalDate dataCompra;
-	
-	@ManyToOne//cada compra pode ser feito apenas por um cliente
-	@JoinColumn(name="cliente_id")//chave estrangeira
+
+	@ManyToOne // cada compra pode ser feito apenas por um cliente
+	@JoinColumn(name = "cliente_id") // chave estrangeira
 	// criar relacionamento de cliente com compras
 	private Cliente cliente;
-	
+
 	public Compras(int id, Double totalCompra, LocalDate dataCompra) {
 		this.id = id;
 		this.totalCompra = totalCompra;
 		this.dataCompra = dataCompra;
 	}
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public Double getTotalCompra() {
 		return totalCompra;
 	}
+
 	public void setTotalCompra(Double totalCompra) {
 		this.totalCompra = totalCompra;
 	}
+
 	public LocalDate getDataCompra() {
 		return dataCompra;
 	}
+
 	public void setDataCompra(LocalDate dataCompra) {
 		this.dataCompra = dataCompra;
 	}
 
-	
 }
