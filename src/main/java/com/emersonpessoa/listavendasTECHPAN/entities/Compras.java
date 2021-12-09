@@ -34,6 +34,11 @@ public class Compras {
 		this.dataCompra = dataCompra;
 	}
 
+	// CRIANDO CONSTRUTOR VAZIO
+	public Compras() {
+
+	}
+
 	public int getId() {
 		return id;
 	}

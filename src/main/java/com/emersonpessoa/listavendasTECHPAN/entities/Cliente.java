@@ -31,6 +31,11 @@ public class Cliente {
 		this.dn = dn;
 	}
 
+	// criando construtor VAZIO
+	public Cliente() {
+
+	}
+
 	// criando getters e setters
 	public int getId() {
 		return id;
