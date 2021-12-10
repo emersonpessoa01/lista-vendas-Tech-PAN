@@ -12,18 +12,17 @@ import com.emersonpessoa.listavendasTECHPAN.DTO.ClienteDTO;
 import com.emersonpessoa.listavendasTECHPAN.entities.Cliente;
 import com.emersonpessoa.listavendasTECHPAN.services.ClienteService;
 
-@RestController //VAI TER ENDPOINTS
+@RestController // VAI TER ENDPOINTS
 @RequestMapping("/clientes")
 public class ClienteController {
 	@Autowired
 	private ClienteService clienteService;
-	
-	//codigo abaixo foi comentada para test e depois, descomentada
+
+	// codigo abaixo foi comentado para test e depois, descomentado
 	@GetMapping
-	public ResponseEntity<List<ClienteDTO>>findAll(){
+	public ResponseEntity<List<ClienteDTO>> findAll() {
 		List<ClienteDTO> lista = clienteService.findAll();
 		return ResponseEntity.ok(lista);
 	}
-	
 
 }

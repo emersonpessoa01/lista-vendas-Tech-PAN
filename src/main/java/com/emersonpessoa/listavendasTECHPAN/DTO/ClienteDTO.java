@@ -9,7 +9,7 @@ public class ClienteDTO {
 
 	// capturar os atributos da entidade cliente
 	public ClienteDTO(Cliente entidade) {
-		this.id = entidade.getId();// passando as informações do atribudo cliente para classe DTO
+		this.id = entidade.getId();// passando as informações do atributo cliente para classe DTO
 		this.nome = entidade.getNome();
 		this.dn = entidade.getDn();
 	}
@@ -18,6 +18,10 @@ public class ClienteDTO {
 		this.id = id;
 		this.nome = nome;
 		this.dn = dn;
+	}
+
+	public ClienteDTO() {//add 
+
 	}
 
 	public int getId() {

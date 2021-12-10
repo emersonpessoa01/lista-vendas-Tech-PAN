@@ -9,7 +9,7 @@ import com.emersonpessoa.listavendasTECHPAN.DTO.ClienteDTO;
 import com.emersonpessoa.listavendasTECHPAN.entities.Cliente;
 import com.emersonpessoa.listavendasTECHPAN.repositories.ClienteRepository;
 
-//service sem banco de dados
+//service com banco de dados
 @Service
 public class ClienteService {
 	@Autowired

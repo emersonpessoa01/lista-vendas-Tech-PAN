@@ -9,16 +9,24 @@ public class ComprasDTO {
 	private Double totalCompra;
 	private LocalDate dataCompra;
 
+	private ClienteDTO cliente; // add
+
 	public ComprasDTO(Compras entidade) {
 		this.id = entidade.getId();
 		this.totalCompra = entidade.getTotalCompra();
 		this.dataCompra = entidade.getDataCompra();
+		this.cliente = new ClienteDTO(entidade.getCliente()); // add
 	}
-	
-	public ComprasDTO(int id, Double totalCompra, LocalDate dataCompra) {
+
+	public ComprasDTO(int id, Double totalCompra, LocalDate dataCompra, ClienteDTO cliente) { // add
 		this.id = id;
 		this.totalCompra = totalCompra;
 		this.dataCompra = dataCompra;
+		this.cliente = cliente;
+	}
+
+	public ComprasDTO() { // add
+
 	}
 
 	public int getId() {
@@ -43,6 +51,14 @@ public class ComprasDTO {
 
 	public void setDataCompra(LocalDate dataCompra) {
 		this.dataCompra = dataCompra;
+	}
+
+	public ClienteDTO getCliente() { // add
+		return cliente;
+	}
+
+	public void setCliente(ClienteDTO cliente) { // add
+		this.cliente = cliente;
 	}
 
 }

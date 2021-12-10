@@ -28,15 +28,20 @@ public class Compras {
 	// criar relacionamento de cliente com compras
 	private Cliente cliente;
 
-	public Compras(int id, Double totalCompra, LocalDate dataCompra) {
+	public Compras(int id, Double totalCompra, LocalDate dataCompra, Cliente cliente) {//add
 		this.id = id;
 		this.totalCompra = totalCompra;
 		this.dataCompra = dataCompra;
+		this.cliente = cliente; //add
 	}
 
 	// CRIANDO CONSTRUTOR VAZIO
 	public Compras() {
 
+	}
+	// PARA ATUALIZAR A UMA COMPRA
+	public Compras(int id) {//add
+		
 	}
 
 	public int getId() {
@@ -62,5 +67,13 @@ public class Compras {
 	public void setDataCompra(LocalDate dataCompra) {
 		this.dataCompra = dataCompra;
 	}
+	//criado getters e setters do cliente
+	public Cliente getCliente() { //add
+		return cliente;
+	}
 
+	public void setCliente(Cliente cliente) { //add
+		this.cliente = cliente;
+	}
+	
 }
