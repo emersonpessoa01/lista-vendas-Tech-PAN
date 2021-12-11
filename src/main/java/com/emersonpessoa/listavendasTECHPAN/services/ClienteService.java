@@ -3,8 +3,6 @@ package com.emersonpessoa.listavendasTECHPAN.services;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import javax.persistence.criteria.From;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +25,16 @@ public class ClienteService { // classe para métodos http
 	// método POST
 	public Cliente saveCliente(Cliente cliente) {
 		return clienteRepository.save(cliente);
+	}
+	
+	//método PUT
+	public Cliente updateCliente(Integer id, Cliente newCliente) {
+		return clienteRepository.findById(id).map(c ->{
+		c.setNome(newCliente.getNome());
+		c.setDn(newCliente.getDn());
+		Cliente atualizado = clienteRepository.save(c);
+		return atualizado;
+		}).orElse(null);
 	}
 
 	// conversão de entidade para DTO
