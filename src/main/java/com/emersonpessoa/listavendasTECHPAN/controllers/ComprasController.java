@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.emersonpessoa.listavendasTECHPAN.DTO.ComprasDTO;
+import com.emersonpessoa.listavendasTECHPAN.DTO.RankingComprasDTO;
 import com.emersonpessoa.listavendasTECHPAN.entities.Compras;
 import com.emersonpessoa.listavendasTECHPAN.services.ComprasService;
 
@@ -29,6 +30,12 @@ public class ComprasController {
 	@GetMapping
 	public ResponseEntity<List<ComprasDTO>> findAll() {
 		List<ComprasDTO> lista = comprasService.findAll();
+		return ResponseEntity.ok(lista);
+	}
+	
+	@GetMapping("/ranking-cliente-por-compras")
+	public ResponseEntity<List<RankingComprasDTO>> findRanking() {
+		List<RankingComprasDTO> lista = comprasService.findRanking();
 		return ResponseEntity.ok(lista);
 	}
 

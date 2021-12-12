@@ -39,7 +39,7 @@ public class ClienteService { // classe para métodos http
 	}
 	
 	// método DELETE
-		public void deleteCliente(Integer id) {
+		public void deleteCliente(Integer id) { //void
 			try {
 
 				if (clienteRepository.findById(id) != null)

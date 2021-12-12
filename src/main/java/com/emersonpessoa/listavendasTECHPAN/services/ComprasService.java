@@ -8,6 +8,7 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import com.emersonpessoa.listavendasTECHPAN.DTO.ComprasDTO;
+import com.emersonpessoa.listavendasTECHPAN.DTO.RankingComprasDTO;
 import com.emersonpessoa.listavendasTECHPAN.entities.Cliente;
 import com.emersonpessoa.listavendasTECHPAN.entities.Compras;
 import com.emersonpessoa.listavendasTECHPAN.repositories.ClienteRepository;
@@ -27,6 +28,11 @@ public class ComprasService {
 		clienteRepository.findAll(); // add
 		List<Compras> resList = comprasRepository.findAll();
 		return resList.stream().map(c -> new ComprasDTO(c)).collect(Collectors.toList());
+	}
+	
+	public List<RankingComprasDTO> findRanking() {
+		List<RankingComprasDTO> resList = comprasRepository.findRanking();
+		return resList;
 	}
 
 	// método POST
