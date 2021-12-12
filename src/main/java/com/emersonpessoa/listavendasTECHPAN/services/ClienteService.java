@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import com.emersonpessoa.listavendasTECHPAN.DTO.ClienteDTO;
@@ -36,6 +37,18 @@ public class ClienteService { // classe para métodos http
 		return atualizado;
 		}).orElse(null);
 	}
+	
+	// método DELETE
+		public void deleteCliente(Integer id) {
+			try {
+
+				if (clienteRepository.findById(id) != null)
+					clienteRepository.deleteById(id);
+			} catch (DataIntegrityViolationException e) {// quando tentar deletar um cliente que tenha uma compra
+				throw new DataIntegrityViolationException("Você não pode deletar um cliente que fez compras");
+			}
+
+		}
 
 	// conversão de entidade para DTO
 	public Cliente fromDTO(ClienteDTO clienteDTO) {
